@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+
+# Build output
+dist/
+
+# Local environment (kept out of VCS; use .env.example)
+.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.log*
+npm-debug.log*
