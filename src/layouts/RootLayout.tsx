@@ -1,25 +1,17 @@
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Box } from '@mui/material';
+import { Outlet } from 'react-router-dom';
+import { NavigationBar } from '@/features/navigation';
+import { Footer } from '@/common/components/Footer';
 
-// Shared layout: top app bar, navigation, and an outlet for child routes.
+// Shared layout: the fixed navigation bar, page content, and a site footer.
 export const RootLayout = () => {
-  const navigate = useNavigate();
-
   return (
     <>
-      <AppBar position="sticky" color="default" elevation={1}>
-        <Toolbar>
-          <Typography variant="h6" component="span" sx={{ flexGrow: 1 }}>
-            React SPA Core
-          </Typography>
-          <Button color="inherit" onClick={() => navigate('/')}>
-            Home
-          </Button>
-        </Toolbar>
-      </AppBar>
-      <Container component="main" sx={{ py: 3 }}>
+      <NavigationBar />
+      <Box component="main">
         <Outlet />
-      </Container>
+      </Box>
+      <Footer />
     </>
   );
 };
